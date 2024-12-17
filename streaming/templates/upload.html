@@ -10,11 +10,15 @@
       href="{% static 'images/favicon.png' %}"
     />
     <link rel="stylesheet" href="{% static 'css/index.css' %}" />
-    <title>Streaming</title>
+    <title>Subir Vídeo</title>
   </head>
   <body>
-    <h1>Servidor de streaming</h1>
-    <a href="/videos/">Vídeos disponibles</a><br />
-    <a href="/upload/">Subir vídeo</a>
+    <h1>Subir Vídeo</h1>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input type="file" name="video" accept="video/mp4" required />
+      <button type="submit">Subir</button>
+    </form>
+    <a href="/videos/">Volver a la lista de vídeos</a>
   </body>
 </html>
