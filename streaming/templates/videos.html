@@ -26,10 +26,8 @@
     </h3>
     <h4 class="text-center">Películas:</h4>
     <div class="descripcion grid-container">
-      <!-- Cambiado a grid-container -->
       {% for video in videos %}
       <div class="card">
-        <!-- Mantener la tarjeta -->
         <img
           src="{% static 'images/'|add:video|slice:':-4' %}.webp"
           class="card-img-top"
